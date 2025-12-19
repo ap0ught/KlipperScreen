@@ -30,3 +30,7 @@ For information on screen rotation, refer to the [Rotation section](Troubleshoot
 ## Touchscreen Touch Rotation
 
 For touchscreen rotation and matrix issues, see the [Touch Issues section](Troubleshooting/Touch_issues.md#touch-rotation-and-matrix) in the troubleshooting guide.
+
+## HDMI Display Configuration
+
+For detailed information on configuring HDMI displays, including monitor selection, resolution settings, and DPMS power management, see the **[HDMI Configuration Guide](HDMI_Configuration.md)**.
