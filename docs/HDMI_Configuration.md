@@ -177,8 +177,12 @@ DPMS (Display Power Management Signaling) allows KlipperScreen to control displa
 
 ### The `set_dpms()` Function
 
-Located in `screen.py`, this function enables or disables DPMS:
+Located in `screen.py`, this function enables or disables DPMS.
 
+!!! warning "Security Note"
+    The current implementation uses `shell=True` with string interpolation of `self.display_number` (from the `DISPLAY` environment variable). This could be a security risk if the environment variable can be influenced by untrusted sources. For production code, it's recommended to use a list of arguments without `shell=True` or validate `display_number` against a safe pattern (e.g., `r'^:\d+(?:\.\d+)?$'`) before use.
+
+**Current implementation (as of screen.py):**
 ```python
 def set_dpms(self, use_dpms):
     """Enable or disable DPMS power management"""
@@ -195,16 +199,55 @@ def set_dpms(self, use_dpms):
     self.use_dpms = use_dpms
 ```
 
+**Safer alternative approach:**
+```python
+def set_dpms(self, use_dpms):
+    """Enable or disable DPMS power management"""
+    if not use_dpms:
+        # Validate display_number format to prevent injection
+        import re
+        if not re.match(r'^:\d+(?:\.\d+)?$', self.display_number):
+            logging.error(f"Invalid display number: {self.display_number}")
+            return
+        
+        # Disable DPMS using argument list (no shell=True)
+        subprocess.run(
+            ["xset", "-display", self.display_number, "dpms", "0", "0", "0"],
+            check=True
+        )
+        subprocess.run(
+            ["xset", "-display", self.display_number, "-dpms"],
+            check=True
+        )
+    self.use_dpms = use_dpms
+```
+
 ### The `wake_screen()` Function
 
-Wakes the display from power-saving mode:
+Wakes the display from power-saving mode.
 
+**Current implementation:**
 ```python
 def wake_screen(self):
     """Wake the screen from standby"""
     subprocess.run(
         f"xset -display {self.display_number} dpms force on",
         shell=True, check=True
+    )
+```
+
+**Safer alternative:**
+```python
+def wake_screen(self):
+    """Wake the screen from standby"""
+    import re
+    if not re.match(r'^:\d+(?:\.\d+)?$', self.display_number):
+        logging.error(f"Invalid display number: {self.display_number}")
+        return
+    
+    subprocess.run(
+        ["xset", "-display", self.display_number, "dpms", "force", "on"],
+        check=True
     )
 ```
 
