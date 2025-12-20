@@ -16,6 +16,7 @@ nav:
       - Installation.md
       - Updating.md
       - Configuration.md
+      - HDMI Configuration: HDMI_Configuration.md
       - Quicktips.md
       - Macros: macros.md
       - Thumbnails.md
@@ -42,9 +43,12 @@ nav:
       - Z Calibrate: Panels/Zcalibrate.md
     - Theming.md
     - Translations.md
+    - Development:
+      - Developers.md
+      - Extending Interface: Extending_Interface.md
+      - GitHub Copilot Guide: GitHub_Copilot_Guide.md
     - Changelog: changelog.md
     - Breaking Changes: breaking.md
-    - Developers.md
     - Contact.md
 theme:
   name: material

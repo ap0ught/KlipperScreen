@@ -5,6 +5,9 @@ create a blank file in `~/printer_data/config/KlipperScreen.conf`, if the file a
 
 Write in the file only the options that need to be changed, and restart KlipperScreen.
 
+!!! tip "Display and HDMI Configuration"
+    For detailed information about HDMI display configuration, monitor selection, resolution settings, and DPMS power management, see the **[HDMI Configuration Guide](HDMI_Configuration.md)**.
+
 
 !!! failure "Critical"
     Each configuration option should be on a newline, as they are presented here.

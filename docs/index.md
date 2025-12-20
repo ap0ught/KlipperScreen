@@ -37,6 +37,26 @@ Donate to Alfredo: [Ko-fi](https://ko-fi.com/alfrix)
 
 thanks to all the [contributors](https://github.com/KlipperScreen/KlipperScreen/graphs/contributors) who helped along the way.
 
+## Documentation
+
+### Getting Started
+- [Hardware](Hardware.md) - Compatible displays and setup
+- [Installation](Installation.md) - Installation instructions
+- [Configuration](Configuration.md) - Configuration options
+- [HDMI Configuration](HDMI_Configuration.md) - HDMI display setup and troubleshooting
+
+### Development
+- [Developer Guide](Developers.md) - Development environment setup
+- [Extending Interface](Extending_Interface.md) - Create custom panels and widgets
+- [GitHub Copilot Guide](GitHub_Copilot_Guide.md) - AI-assisted development with KlipperScreen
+
+### Additional Resources
+- [FAQ](FAQ.md) - Frequently asked questions
+- [Panels](Panels.md) - Available panels and screenshots
+- [Macros](macros.md) - Macro configuration
+- [Theming](Theming.md) - Theme customization
+- [Troubleshooting](Troubleshooting.md) - Common issues and solutions
+
 
 ### Sponsors
 

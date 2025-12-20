@@ -59,3 +59,12 @@ Using a Virtual printer will need klipper and moonraker need to be installed in 
 
 * Set interpreter to the virtual environment created
 * Set the run configuration to `KlipperScreen/screen.py`
+
+## Extending KlipperScreen
+
+Once you have your development environment set up, you can start creating custom panels and extending the interface.
+
+For comprehensive information on extending KlipperScreen:
+
+* **[Extending Interface Guide](Extending_Interface.md)** - Learn how to create custom panels, widgets, and interfaces
+* **[GitHub Copilot Guide](GitHub_Copilot_Guide.md)** - Use AI-assisted development effectively with KlipperScreen
